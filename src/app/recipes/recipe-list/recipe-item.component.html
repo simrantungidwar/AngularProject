@@ -1,0 +1,21 @@
+<a href="#" class="list-group-item clearfix">
+  <div  cc class="pull-left">
+    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+    <p class="list-group-item-text">{{recipe.description | summary}}</p>
+      <p class="list-group-item-text">{{recipe.offerdate | date}}</p>
+         <p class="list-group-item-text">{{recipe.expirydate | date : 'yyyy/MM'}}</p>
+          <p class="list-group-item-text">{{recipe.price | currency : 'EUR'}}</p>
+            <p class="list-group-item-text">{{recipe.liked}}</p>
+  </div>
+  <span class="pull-right">
+      <img class="img-responsive"
+           src="{{recipe.imagePath}}"
+           style="max-height: 50px;"/>
+<i
+class="glyphicon glyphicon-heart"
+[class.highlighted]="iLike"
+(click)="onClick()"></i>
+<span >{{recipe.liked}} </span>
+
+  </span>
+</a>
